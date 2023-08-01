@@ -1,11 +1,11 @@
 # AI-ML_Learning
 This repo was created for take some short note, write example codes from O'REILLY Book (AI and Machine Learning for Coders ; Written by Laurence Moroney).
 
-ผมเองต้องการใช้ repo นี้สำหรับจดสรุปในแต่ละบทที่ผมได้อ่าน และเก็บโค้ดสำหรับการทดลอง
-หากมีข้อผิดพลาดประการใดต้องขออภัยมา ณ ที่นี้ด้วยครับ สามารถ
+repo นี้ใช้สำหรับจดสรุปในแต่ละบทที่ผมได้อ่าน และเก็บโค้ดสำหรับการทดลอง
+หากมีข้อมูลไหนที่ผิดพลาดหรือทำให้เข้าใจผิดต้องขออภัยมา ณ ที่นี้ด้วยครับ เพราะผมเองก็เพิ่งสนใจเรียนทางด้านนี้
 
 ## บทที่ 1 เริ่มต้น Machine Learning
-        บทนี้เราจะได้ทดลองใช้ Keras จาก Tensorflow Library ในการพัฒนา Deep Learning อย่างง่าย
+    บทนี้เราจะได้ทดลองใช้ Keras จาก Tensorflow Library ในการพัฒนา Deep Learning อย่างง่าย
     โดยเราจะให้ค่า X และ Y จากนั้นให้โมเดลของเราทำนายค่าความสัมพันธ์ของทั้งสองค่า
     ซึ่งในที่นี้จะให้ค่า X และ Y เท่ากับ
     ```
@@ -17,7 +17,7 @@ This repo was created for take some short note, write example codes from O'REILL
     ```
         model = Sequential([Dense(units=1, input_shape=[1])])
     ```
-        โดยรูปแบบเลเยอร์ที่จะใช้ในตัวอย่างนี้คือ Dense ซึ่งเป็นรูปแบบเครือข่ายที่แต่ละโหนดจะเชื่อมกันทุกโหนด ตัวอย่างนี้เราจะกำหนดโหนดเพียงแค่ 1 โหนดเท่านั้น โดยรับ input 1 ค่า (ค่า X)
+    โดยรูปแบบเลเยอร์ที่จะใช้ในตัวอย่างนี้คือ Dense ซึ่งเป็นรูปแบบเครือข่ายที่แต่ละโหนดจะเชื่อมกันทุกโหนด ตัวอย่างนี้เราจะกำหนดโหนดเพียงแค่ 1 โหนดเท่านั้น โดยรับ input 1 ค่า (ค่า X)
         
     ขั้นตอนถัดมาหลังจากสร้างโมเดลแล้ว เราจะปรับปรุงคุณภาพของโมเดล โดยการกำหนด optimizer และ loss function ด้วย compile method
     ```
@@ -28,13 +28,13 @@ This repo was created for take some short note, write example codes from O'REILL
     sgd ย่อมาจาก stochastic gradient descent คือวิธีการหา weight ที่ทำให้ loss มีค่าน้อยที่สุดผ่านการสุ่ม data มาบางตัว (อ่านเพิ่มเติมได้จากลิงค์ข้างล่างนะครับ)
     mean_squared_error คือ วิธีการวัด error โดยนำค่า error ที่ได้ไปยกกำลังสอง (อ่านเพ่ิมเติมได้จากลิงค์ด้านล่างเช่นกันครับ)
 
-        หลังจากการ optimize ตัวโมเดลของเรา ถัดมาเราจะนำข้อมูลที่กำหนดข้างต้น (X,Y) มาเทรนตัวโมเดลผ่าน fit method
+    หลังจากการ optimize ตัวโมเดลของเรา ถัดมาเราจะนำข้อมูลที่กำหนดข้างต้น (X,Y) มาเทรนตัวโมเดลผ่าน fit method
     ```
         model.fit(x,y,epochs=500)
     ```
     เราส่งค่า x และ y ให้โมเดลเทรน โดย epochs คือ จำนวนครั้งที่ใช้ในการเทรนโมเดล ยิ่งมากค่า loss ยิ่งน้อย แต่หากมากเกินไปก็อาจมีปัญหาเรื่อง Overfitting ได้ (โมเดลเราเก่งกับข้อมูลที่ใช้สอน แต่ไม่เก่งกับข้อมูลที่ใช้ทดสอบ)
 
-        จากนั้นเราทดสอบโมเดลด้วย predict method โดยส่งค่า 10 ให้โมเดลทำนาย
+    จากนั้นเราทดสอบโมเดลด้วย predict method โดยส่งค่า 10 ให้โมเดลทำนาย
     ```
         model.predict([10])
     ```
@@ -59,7 +59,7 @@ This repo was created for take some short note, write example codes from O'REILL
 
 ## บทที่ 2 จำแนกเสื้อผ้าจาก Fashion MNIST
 
-#Tips
+# Tips
 
 Library หลักๆ ที่ใช้ มี Tensorflow, Numpy
 ```
