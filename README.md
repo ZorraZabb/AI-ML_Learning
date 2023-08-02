@@ -79,3 +79,9 @@ Library หลักๆ ที่ใช้ มี Tensorflow, Numpy
 import tenforflow as tf
 import numpy as np
 ```
+
+กรณีที่ขี้เกียจ พิมพ์ tf.keras.layers ยาวๆ สามารถย่อได้จากส่วน import
+```
+from tensorflow.keras.layers import Dense, Flatten
+```
+ช่วยลดการเขียนไปเยอะเลย และใน VSCode ก็มีส่วนเสริมสำหรับเพิ่มส่วนที่เราจะ import อัตโนมัติด้วย (อาจจะมีErrorบ้าง)
