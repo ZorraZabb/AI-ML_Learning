@@ -71,6 +71,18 @@ data = tf.keras.datasets.fashion_mnist
 (training_image, training_label), (test_image, test_label) = data.load_data()
 ```
 
+ถัดมาส่วนของวิธีการเทรนโมเดล, เราจะแปลงรูปขนาด 28x28 พิกเซล 2 มิติ ให้อยู่ในรูป 1 มิติ โดยใช้เลเยอร์ Flatten จากนั้นจึงนำเข้าข้อมูลสู่เลเยอร์ Dense และแสดงเอาท์พุตออกมา 10 แบบ ซึ่งต่างจากตัวอย่างในบทที่ 1 ที่ใช้ Dense เพียง 1 เลเยอร์ในการเป็นทั้ง input และ output มาดูที่ตัวโค้ดกัน
+```
+model = tf.keras.models.Sequential([
+    tf.keras.layers.Flatten(input_shape=(28,28)),
+    tf.keras.layers.Dense(128, activation="relu"),
+    tf.keras.layers.Dense(10, activation="softmax")
+])
+```
+เลเยอร์แรก Flatten - แปลงอินพุต 2 มิติให้อยู่ในรูป 1 มิติ โดยตัวอย่างรับอินพุตขนาด 28x28
+เลเยอร์ที่ 2 Dense - กำหนดให้มี units 128 ตัว (จะใช้กี่ตัวก็ได้ แต่ถ้ามากเกินไปอาจเกิด Overfitting) และ activation คือการระบุวิธีการคืนค่า อย่างในตัวอย่างคือ relu ซึ่งจะคืนค่าบวกถ้ามากกว่า 0 และคืนค่าเป็น 0 หากค่าที่ได้น้อยกว่า 0
+เลเยอร์ที่ 3 Dense - เลเยอร์นี้เป็นเอาต์พุตมีทั้งหมด 10 units ตามชนิดเครื่องแต่งกาย ซึ่งใข้วิธี softmax หมายถึงคืนค่ามากที่สุด (ความเป็นไปได้มากที่สุด)
+
 # Tips
 
 
